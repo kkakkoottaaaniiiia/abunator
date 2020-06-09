@@ -19,7 +19,7 @@ message_data = {}
 def branch():
 
     answer = int(request.form.get('answer'))
-    column = str(request.form,get('column'))
+    column = str(request.form.get('column'))
     question = str(request.form.get('question'))
     path = int(request.form.get('path'))
     
@@ -28,7 +28,7 @@ def branch():
 
     count = int(counter.Get_count(answer,column,question))
 
-    if len(Answerlist) == 0 and PathList[len(PathList)-1] is 1:
+    if len(counter.SQLList) == 0 and PathList[len(PathList)-1] is 1:
         return redirect('/index')
 
     elif count == 1:

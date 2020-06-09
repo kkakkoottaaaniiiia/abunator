@@ -9,10 +9,11 @@ import Ararat
 import psycopg2
 import flask
 
-def Nerses():
+def resNumber():
     pass
 
-def Sahak():
+def resName():
     pass
 
-def 
+def resComment():
+    pass
