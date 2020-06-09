@@ -28,7 +28,7 @@ def branch():
 
     count = int(counter.Get_count(answer,column,question))
 
-    if len(Answerlist) == 0 and PathList[len(tfList)-1] is 1:
+    if len(Answerlist) == 0 and PathList[len(PathList)-1] is 1:
         return redirect('/index')
 
     elif count == 1:
