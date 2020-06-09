@@ -12,8 +12,12 @@ import os
 import flask
 import psycopg2
 
-SQLlist = []
-Pathlist = []
+#これまでのSQL文、カラム、質問を収納します
+SQLList = []
+ColumnList = []
+QuestionList = []
+
+#DBのURL
 url = 'Shinomiya'
 
 #DBに接続
@@ -21,19 +25,19 @@ def get_connection():
     return psycopg2.connect(url)
 
 #回答をリストに記録
-def Mher(answer,column,question):
-    if answer == 'はい' :
+def Listmaker(answer,column,question):
+    if answer == 0 :
         Mher = column + " = '" + question + "'"
-        SQLlist.append(Mher)
-    elif answer == 'いいえ' :
+        SQLList.append(Mher)
+    elif answer == 1 :
         Mher = column + " != '" + question + "'"
-        SQLlist.append(Mher)
-    elif answer == 'わからない' :
+        SQLList.append(Mher)
+    elif answer == 2 :
         Mher = "no >= 1"
-        SQLlist.append(Mher)
+        SQLList.append(Mher)
 
 #過去の回答内容を取り出してSQL文にする
-def David():
+def SQLmaker():
     Searchsql = "no >= 1"
     for i in range(0,len(SQLlist)-1):
         Searchsql = Searchsql + " and " + SQLlist[i]
@@ -44,11 +48,9 @@ def Get_count(answer,column,question):
         Mher(answer,column, question)
         with get_connection() as con:
             with con.cursor as cur :
-                cur.execute("select count (*) from animals where " + David())
+                cur.execute("select count (*) from animals where " + SQLmaker())
                 results = cur.fetchall()
         for i in results:
             Ararat = i[0]
             break
         return int(Ararat)
-
-#print(David())

@@ -16,6 +16,7 @@ Created on Tue Jun  9 11:20:15 2020
 import os
 import psycopg2
 import random
+import counter
   
 users = "kwmr" 
 dbnames = "db"
@@ -65,6 +66,7 @@ def questionVerse (calm):
         question=i[0]
         break
     
+    counter.QuestionList.append(question)
     return "それは"+question+"？"
     
 def getCalm(list):
@@ -79,6 +81,7 @@ def getCalm(list):
                 MAX=getMaxCalm(i[0])
                 buriburi=i[0]
     
+    counter.ColumnList.append(buriburi)
     return buriburi
     
 #print(questionVerse("division"))
