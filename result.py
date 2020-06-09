@@ -9,11 +9,27 @@ import counter
 import psycopg2
 import flask
 
-def resNumber():
-    pass
+url = 'Yotsudsuka'
 
+def get_connection():
+    return psycopg2.connect(url)
+    
 def resName():
-    pass
+    with get_connection() as con:
+            with con.cursor as cur :
+                cur.execute("select name from animals where " + counter.SQLmaker())
+                results = cur.fetchall()
+    for i in results:
+        Aragat = i[0]
+        break
+    return str(Aragat)
 
-def resComment():
-    pass
+def resDealing():
+    with get_connection() as con:
+            with con.cursor as cur :
+                cur.execute("select dealing from animals where " + counter.SQLmaker())
+                results = cur.fetchall()
+    for i in results:
+        Azhdahak = i[0]
+        break
+    return str(Azhdahak)
