@@ -4,8 +4,6 @@ Created on Tue Jun  9 11:20:15 2020
 
 @author: School
 """
-
-
 # coding: utf-8
 
 #todo

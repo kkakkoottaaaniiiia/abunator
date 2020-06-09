@@ -4,35 +4,37 @@ Created on Tue Jun  9 11:22:08 2020
 
 @author: School
 """
-from flask import Flask,render_template.request,session,redirect
-from Ararat import Mher
-from Ararat import David
-from Ararat import Get_count
+from flask import Flask,render_template,request,session,redirect
+import Ararat
 
 tfList = [0]
 
-app = (Flask__name__)
-app.secret_key = b'random string...'
+app = Flask(__name__)
 
 member_data = {}
 message_data = {}
 
-@app.route('/question', methods = ['POST'])
+@app.route('/main', methods = ['POST'])
 
 def branch():
-count = int(Get_count(answer,column,question))
 
-if (len(Answerlist) == 0) and (tfList[len(tfList)-1] == 1):
-    return redirect('/index')
+    answer = str(request.form.get('answer'))
+    column = str(request.form,get('column'))
+    question = str(request.form.get('question'))
 
-elif (count == 1):
-    return redirect('/answer')
+    count = int(Ararat.Get_count(answer,column,question))
 
-elif (count == 0):
-    return redirect('/unknown')
+    if (len(Answerlist) == 0) and (tfList[len(tfList)-1] == 1):
+        return redirect('/index')
 
-elif (count >= 2):
-    return redirect('/question')
+    elif (count == 1):
+        return redirect('/result')
 
-else:
-    return redirect('/error')
+    elif (count == 0):
+        return redirect('/unknown')
+
+    elif (count >= 2):
+        return redirect('/question')
+
+    else:
+        return redirect('/error')
