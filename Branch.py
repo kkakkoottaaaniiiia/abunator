@@ -19,7 +19,7 @@ message_data = {}
 def branch():
 
     answer = str(request.form.get('answer'))
-    column = str(request.form,get('column'))
+    column = str(request.form.get('column'))
     question = str(request.form.get('question'))
 
     count = int(Ararat.Get_count(answer,column,question))
