@@ -5,7 +5,7 @@ Created on Tue Jun  9 15:36:33 2020
 @author: School
 """
 import os
-import Ararat
+import counter
 import psycopg2
 import flask
 
