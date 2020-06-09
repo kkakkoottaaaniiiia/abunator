@@ -5,9 +5,9 @@ Created on Tue Jun  9 11:22:08 2020
 @author: School
 """
 from flask import Flask,render_template,request,session,redirect
-import Ararat
+import counter
 
-tfList = [0]
+PathList = [0]
 
 app = Flask(__name__)
 
@@ -18,22 +18,26 @@ message_data = {}
 
 def branch():
 
-    answer = str(request.form.get('answer'))
-    column = str(request.form.get('column'))
+    answer = int(request.form.get('answer'))
+    column = str(request.form,get('column'))
     question = str(request.form.get('question'))
+    path = int(request.form.get('path'))
+    
+    del PathList[len(PathList)-1]
+    PathList.append(path)
 
-    count = int(Ararat.Get_count(answer,column,question))
+    count = int(counter.Get_count(answer,column,question))
 
-    if (len(Answerlist) == 0) and (tfList[len(tfList)-1] == 1):
+    if len(Answerlist) == 0 and PathList[len(PathList)-1] is 1:
         return redirect('/index')
 
-    elif (count == 1):
+    elif count == 1:
         return redirect('/result')
 
-    elif (count == 0):
+    elif count == 0:
         return redirect('/unknown')
 
-    elif (count >= 2):
+    elif count >= 2:
         return redirect('/question')
 
     else:
