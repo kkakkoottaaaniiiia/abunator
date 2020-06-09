@@ -39,13 +39,13 @@ def Listmaker(answer,column,question):
 #過去の回答内容を取り出してSQL文にする
 def SQLmaker():
     Searchsql = "no >= 1"
-    for i in range(0,len(SQLlist)-1):
-        Searchsql = Searchsql + " and " + SQLlist[i]
+    for i in range(0,len(SQLList)-1):
+        Searchsql = Searchsql + " and " + SQLList[i]
     return  Searchsql
 
 #回答の内容に合致する動物の数を数える
 def Get_count(answer,column,question):
-        Mher(answer,column, question)
+        Listmaker(answer,column, question)
         with get_connection() as con:
             with con.cursor as cur :
                 cur.execute("select count (*) from animals where " + SQLmaker())
