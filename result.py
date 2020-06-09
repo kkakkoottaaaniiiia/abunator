@@ -14,22 +14,34 @@ url = 'Yotsudsuka'
 def get_connection():
     return psycopg2.connect(url)
     
-def resName():
+def resNumber():
     with get_connection() as con:
             with con.cursor as cur :
-                cur.execute("select name from animals where " + counter.SQLmaker())
+                cur.execute("select no from animals where " + counter.SQLmaker())
                 results = cur.fetchall()
     for i in results:
-        Aragat = i[0]
+        Aramazd = i[0]
         break
-    return str(Aragat)
+    return int(Aramazd)
 
-def resDealing():
+def resName(number):
     with get_connection() as con:
             with con.cursor as cur :
-                cur.execute("select dealing from animals where " + counter.SQLmaker())
+                cur.execute("select name from animals where no = " + number)
                 results = cur.fetchall()
     for i in results:
-        Azhdahak = i[0]
+        Anahit = i[0]
         break
-    return str(Azhdahak)
+    return str(Anahit)
+
+def resDealing(number):
+    with get_connection() as con:
+            with con.cursor as cur :
+                cur.execute("select dealing from animals where no = " + number)
+                results = cur.fetchall()
+    for i in results:
+        Vahagn = i[0]
+        break
+    return str(Vahagn)
+
+#変数としてresNumberの結果を記録し、それを鍵として、動物の名前と画像とコメントを取り出せないかな
