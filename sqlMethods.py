@@ -18,9 +18,9 @@ import psycopg2
 import random
 import counter
   
-users = "kwmr" 
-dbnames = "db"
-passwords = "100222"
+users = "Postgres" 
+dbnames = "Abunator"
+passwords = "postgres"
 
 #データベースにアクセスするための情報(ローカルの場合)
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords

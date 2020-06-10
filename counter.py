@@ -17,12 +17,16 @@ SQLList = []
 ColumnList = []
 QuestionList = []
 
-#DBのURL
-url = 'Shinomiya'
+users = "Postgres" 
+dbnames = "Abunator"
+passwords = "postgres"
+
+#データベースにアクセスするための情報(ローカルの場合)
+DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
 #DBに接続
 def get_connection():
-    return psycopg2.connect(url)
+    return psycopg2.connect(DATABASE_URL)
 
 #回答をリストに記録
 def Listmaker(answer,column,question):
