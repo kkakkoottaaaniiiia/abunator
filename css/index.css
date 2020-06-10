@@ -34,8 +34,10 @@ h1{
 
 /*スタートボタンを立体に*/
 .start {
-	font-weight:bold;
-	font-color:#ffffff;
+    font-weight:bold;
+    /*color指定のコードを変更_下記のコメントアウトが元の記述*/
+    /*font-color:#ffffff;*/
+    color:#ffffff;
 	font-size:30px;
   	display: inline-block;
   	width: 150px;

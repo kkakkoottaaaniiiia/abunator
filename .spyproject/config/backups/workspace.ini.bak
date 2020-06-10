@@ -6,5 +6,9 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['Branch.py', 'Ararat.py', 'sqlMethods.py']
+<<<<<<< HEAD
+recent_files = ['CSS\\unknown_error.css', 'result.py']
+=======
+recent_files = ['counter.py', 'Branch.py', 'result.py', 'README.md', 'sqlMethods.py']
+>>>>>>> 65297070409b9e11a5937840395ec1c37afc226d
 
