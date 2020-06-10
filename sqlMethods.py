@@ -17,6 +17,7 @@ import os
 import psycopg2
 import random
 import counter
+
   
 users = "Postgres" 
 dbnames = "Abunator"
@@ -37,7 +38,7 @@ def randomName():
             cur.execute("SELECT name FROM creatures WHERE num='"+str(num)+"';")
             results = cur.fetchall()
             print(results)
- 
+
 
 
 #ここから下はJavaの関数と同じ動き
@@ -54,7 +55,7 @@ def getMaxCalm(calm):
     for i in results:
         number=i[1]
         break
-    
+
     return int(number)
 
 def questionVerse (calm):
@@ -65,10 +66,10 @@ def questionVerse (calm):
     for i in results:
         question=i[0]
         break
-    
+
     counter.QuestionList.append(question)
     return "それは"+question+"？"
-    
+
 def getCalm(list):
     MAX=0
     with get_connection() as conn:
@@ -80,8 +81,8 @@ def getCalm(list):
             if(MAX<getMaxCalm(i[0])):
                 MAX=getMaxCalm(i[0])
                 buriburi=i[0]
-    
+
     counter.ColumnList.append(buriburi)
     return buriburi
-    
+
 #print(questionVerse("division"))
