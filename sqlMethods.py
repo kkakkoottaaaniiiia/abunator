@@ -47,7 +47,7 @@ def getMaxCalm(calm):
     with get_connection() as conn:
         with conn.cursor() as cur:
             #SQL文実行
-            cur.execute("SELECT "+calm+", count("+calm+") AS COUNT FROM creatures GROUP BY "+calm+" ORDER BY COUNT desc;")
+            cur.execute("SELECT "+calm+", count("+calm+") AS COUNT FROM maintable GROUP BY "+calm+" ORDER BY COUNT desc;")
             results = cur.fetchall()
     #この場合、情報は[(uuu, nnn), (ccc, hhh), ・・・, (iii, ooo)]の形でresultsに格納されている
     #今欲しいのはnnnの部分のため、for文でそこだけ取り出す
@@ -60,7 +60,7 @@ def getMaxCalm(calm):
 def questionVerse (calm):
     with get_connection() as conn:
         with conn.cursor() as cur:
-            cur.execute("SELECT "+calm+", count("+calm+") AS COUNT FROM creatures GROUP BY "+calm+" ORDER BY COUNT desc;")
+            cur.execute("SELECT "+calm+", count("+calm+") AS COUNT FROM maintable GROUP BY "+calm+" ORDER BY COUNT desc;")
             results = cur.fetchall()
     for i in results:
         question=i[0]
@@ -73,7 +73,7 @@ def getCalm(list):
     MAX=0
     with get_connection() as conn:
         with conn.cursor() as cur:
-            cur.execute("SELECT * FROM creatures;")
+            cur.execute("SELECT * FROM maintable;")
             results = cur.fetchall()
     for i in results:
         if not(list in i[0]):

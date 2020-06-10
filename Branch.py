@@ -14,6 +14,14 @@ app = Flask(__name__)
 member_data = {}
 message_data = {}
 
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if ___name__ == "__main__":
+    app.run(debug = true)
+
 @app.route('/main', methods = ['POST'])
 
 def branch():
@@ -29,16 +37,19 @@ def branch():
     count = int(counter.Get_count(answer,column,question))
 
     if (PathList[len(PathList)-1] is 1) and (counter.QuestionList[len(counter.QuestionList)-1] is counter.QuestionList[0]):
-        return redirect('/index')
+        return render_template('/index.html')
 
     elif count == 1:
-        return redirect('/result')
+        return render_template('/result.html')
 
     elif count == 0:
-        return redirect('/unknown')
+        return render_template('/unknown.html')
 
     elif count >= 2:
-        return redirect('/question')
+        return render_template('/question.html')
 
     else:
-        return redirect('/error')
+        return render_template('/error.html')
+    
+if ___name__ == "__main__":
+    app.run(debug = true)

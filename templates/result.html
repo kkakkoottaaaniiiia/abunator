@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/answer.css">
+    <title>解答画面</title>
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <!--
+            <% String answer = String.valueOf(request.getAttribute("answer")) ; %>
+            <% String culumn = String.valueOf(request.getAttribute("culumn")) ; %>
+            <% String question = String.valueOf(request.getAttribute("question")) ; %>
+            <%-- String[] res = Result.res(answer, culumn, question) ; --%>
+        -->
+        
+        <h1 class="f-big"><a href="index.html">ABUNATOR</a></h1>
+        <hr size="2" color="#DB1D32" noshade/>
+        
+        <!--
+            <% int resNo = Branch.getAnswerNo(answer, culumn, question); %>
+            <% String name = Branch.resName(answer,culumn,question) ; %>
+            <% String deal = Branch.getResultDealing01(answer,culumn,question) ; %>
+        -->
+        <!-- 特に差支えのない限り、↑は動かさないでください（動物の情報を指定するコードです） -->
+        
+        <div class="box">
+        
+            <!--
+                <div >
+                <img src = "img/<%=resNo %>.png"  style="width: 350px;">
+            -->
+                <!-- ↑動物の画像 -->
+            <!--
+                <%--=res[2] --%>	<br>
+                </div>
+                <div class="box02">
+                <span class="name"><%=name %></span>
+            -->    
+                <!-- ↑動物の名前 -->	
+            <!--    
+                <br>
+                <P><%=deal %></P>
+            -->
+                <!-- ↑動物の説明文 -->
+            <!--
+                </div>
+            -->
+            
+            <!--ダミーデータ : resNo = 13 name = "ニホンザル" deal = "ニホンザル(No13)の説明文" -->
+            <div>
+                <div>
+                    <!-- <img src="../imgs/{{resNo}}.png" style="width: 350px;"> -->
+                    <img src="../imgs/13.png" style="width: 350px;">
+                    <br>
+                </div>
+                <div class="box02">
+                    <!-- <span class="name">{{name}}</span> -->
+                    <span class="name">ニホンザル</span>
+                    <br>
+                    <!-- <P>{{deal}}</P> -->
+                    <p>    
+                        ニホンザルの説明
+                    </p>
+                </div>
+            
+            </div>
+            
+        </div>
+        
+        <img class="smart" src="../imgs/smart.png" />
+
+        <!-- <%--=res[3] --%> -->
+        
+        <!-- img src="img/smart.png" / -->
+        
+        </div>
+        
+
+</body>
+
+</html>
