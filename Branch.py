@@ -7,7 +7,7 @@ Created on Tue Jun  9 11:22:08 2020
 from flask import Flask,render_template,request,session,redirect
 import counter
 
-PathList = [0]
+PathList = []
 
 app = Flask(__name__)
 
