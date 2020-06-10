@@ -6,7 +6,7 @@ import psycopg2
 import random
 
 host = "18.181.156.243"
-post = "5432"
+port = "5432"
 dbname = "abunator"
 user = "postgres"
 password = "Ag9e832p@_30g!3d0b8alvm20;"
@@ -24,7 +24,7 @@ def setQuestion():
 def get_connection():
     return psycopg2.connect(DATABASE_URL)
 
-def getClumn():
+def getCulmn():
     if (len(questionList) <= 35):
         num = random.randint(1,len(culumnList))
         culumn = culumnList[num]
@@ -36,7 +36,8 @@ def getClumn():
 def getQuestion(culumn):
     with get_connection() as conn:
         with conn.cursor() as cur:
-        cur.execute("SELECT" + culumn + "FROM animals ORDER BY random() limit 1")
-        result = cur.fetchall()
-        question = result.getString(1)
-        return question
+            cur.execute("SELECT" + culumn + "FROM animals ORDER BY random() limit 1")
+            result = cur.fetchall()
+            question = result.getString(1)
+
+            return question
