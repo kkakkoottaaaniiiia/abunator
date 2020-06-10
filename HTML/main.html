@@ -1,19 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=S, initial-scale=1.0">
-    <title>main</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=S, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/main.css">
+        <title>質問画面</title>
+    </head>
 
-<body>
+    <body>
+        <div id="wrap">
 
-    <h1 class="f-big"><a href="index.html">ABUNATOR</a></h1>
-    <hr size="2" color="#DB1D32" noshade/>
+        <h1 class="f-big"><a href="index.html">ABUNATOR</a></h1>
+        <hr size="2" color="#DB1D32" noshade/>
 
-    
+        <div id="TotleAnswer">
+            <p class="dai" style="margin-left: 12px;">Question</p>
+            <div class="box">
+                <p>
 
-</body>
+                    <!--質問内容はここに記述する。{{変数}}の形で多分ok-->
+
+
+                </p>
+
+            </div>
+            
+            <!-- Culumn, question, answer, passのvalueをsubmitで送る -->
+            <!-- 元のコードも一つ残しておく-->
+            <!--
+            <form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >
+            <div class="triangle"> <input type = "hidden" name = "culumn" value = <%=culumn %> >
+                                     <input type = "hidden" name = "question" value = <%=question %>>
+                                     <input type = "hidden" name = "answer" value = "はい">
+                                      <input type = "hidden" name = "pass" value = "false" >
+                                     <input type="submit"   value="はい" class="button">
+            </div>
+            </form>        
+            -->
+            
+            <form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >
+                <div class="triangle"> <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                       <input type = "hidden" name = "question" value = "{{question}}">
+                                       <input type = "hidden" name = "answer" value = "はい">
+                                       <input type = "hidden" name = "pass" value = "false">
+                                       <input type = "submit" value = "はい" class = "button">
+                </div>
+            </form>        
+                
+            <form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >
+                <div class="triangle"> <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                       <input type = "hidden" name = "question" value = "{{question}}"> 
+                                       <input type = "hidden" name = "answer" value = "いいえ">
+                                       <input type = "hidden" name = "pass" value = "false">
+                                       <input type = "submit" value = "いいえ" class = "button">
+                </div>
+            </form>
+        
+            <form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >
+                <div class="triangle"> <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                       <input type = "hidden" name = "question" value = "{{question}}"> 
+                                       <input type = "hidden" name = "answer" value = "わからない">
+                                       <input type = "hidden" name = "pass" value = "false">
+                                       <input type = "submit" value = "わからない" class = "button">
+                </div>
+            </form>
+        
+            <form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >
+                <div class="triangle"> <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                       <input type = "hidden" name = "question" value = "{{question}}"> 
+                                       <input type = "hidden" name = "answer" value = "わからない">
+                                       <input type = "hidden" name = "pass" value = "true">
+                                       <input type = "submit" value = "前の質問に戻る" class= "button">
+                                     <!-- このボタンが押された時のみ、passをtrueにしてサーブレットに送ります -->
+                </div>
+            </form>
+        
+        <br>
+        <br>
+        
+        </div>
+        <div><img src="img/character_program.png" /></div>
+        </div>
+        
+        
+        
+        
+    </body>
 
 </html>
