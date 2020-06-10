@@ -5,14 +5,11 @@ import flask
 import psycopg2
 import random
 
-host = "18.181.156.243"
-port = "5432"
-dbname = "abunator"
-user = "postgres"
-password = "Ag9e832p@_30g!3d0b8alvm20;"
-table = "animals"
+users = "Postgres"
+dbnames = "Abunator"
+passwords = "postgres"
 
-DATABASE_URL = "host=" + user + "port=" + port + "dbname=" + dbname + "user=" + user + "password=" + password
+DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
 culumnList = ["size","division","color","region","place","pattern","symptoms","food","decider01","decider02"]
 
