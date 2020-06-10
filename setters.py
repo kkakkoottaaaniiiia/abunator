@@ -8,6 +8,7 @@ import sqlMethods
 import counter
 import Branch
 
+#ここにある関数を使えば、好きな配列を初期化できる
 
 def setPathList():
     Branch.PathList.clear()

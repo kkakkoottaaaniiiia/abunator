@@ -9,7 +9,7 @@ import counter
 import psycopg2
 import flask
 
-users = "Postgres" 
+users = "postgres" 
 dbnames = "Abunator"
 passwords = "postgres"
 
