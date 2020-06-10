@@ -15,12 +15,9 @@ h1{
 	padding:30px 0 0 20px;
 }
 
-
-
 hr {
 	margin:-15px 0 50px 0;
 }
-
 
 .f-big:first-letter{
 	color:#DB1D32;
@@ -80,8 +77,6 @@ a{
 	z-index: 1;
 }
 
-
-
 .box02 {
     border: solid 3px#FC876E;
     border-radius: 0px 50px 0px 50px;
@@ -96,4 +91,3 @@ a{
 	margin-top:200px;
 	width:280px;
 }
-
