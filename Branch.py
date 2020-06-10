@@ -6,6 +6,7 @@ Created on Tue Jun  9 11:22:08 2020
 """
 from flask import Flask,render_template,request,session,redirect
 app = Flask(__name__)
+app.secret_key = b'random string...'
 
 import counter
 
@@ -15,14 +16,17 @@ member_data = {}
 message_data = {}
 
 
-@app.route('/')
-
+@app.route('/' )
 def index():
-    return render_template('index.html')
+    return redirect('index')
 
 
-@app.route('/main', methods = ['POST'])
+@app.route('/', methods=['POST'])
+def starter():
+    return redirect('/main')
 
+
+@app.route('/main', methods=['POST'])
 def branch():
 
     answer = int(request.form.get('answer'))
@@ -36,19 +40,19 @@ def branch():
     count = int(counter.Get_count(answer,column,question))
 
     if (PathList[len(PathList)-1] is 1) and (counter.QuestionList[len(counter.QuestionList)-1] is counter.QuestionList[0]):
-        return render_template('/index')
+        return redirect('/index')
 
     elif count == 1:
-        return render_template('/result')
+        return redirect('/result')
 
     elif count == 0:
-        return render_template('/unknown')
+        return redirect('/unknown')
 
     elif count >= 2:
-        return render_template('/question')
+        return redirect('/question')
 
     else:
-        return render_template('/error')
+        return redirect('/error')
     
 if __name__ == "__main__":
     app.run(debug=True, port=8888, threaded=True)  
