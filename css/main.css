@@ -83,7 +83,9 @@ a{
 }
 
 img{
-	float:clear;
+	/*コードの一部書き換え*/
+	/*float:clear;*/
+	clear: right;
 	margin-left:230px;
 }
 
