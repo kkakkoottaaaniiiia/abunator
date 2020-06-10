@@ -9,10 +9,15 @@ import counter
 import psycopg2
 import flask
 
-url = 'Yotsudsuka'
+users = "Postgres" 
+dbnames = "Abunator"
+passwords = "postgres"
+
+#データベースにアクセスするための情報(ローカルの場合)
+DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
 def get_connection():
-    return psycopg2.connect(url)
+    return psycopg2.connect(DATABASE_URL)
     
 def resNumber():
     with get_connection() as con:
