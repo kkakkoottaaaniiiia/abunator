@@ -16,14 +16,18 @@ member_data = {}
 message_data = {}
 
 
-@app.route('/',methods=['GET'] )
+@app.route('/',methods = ['GET'] )
 def index():
     return render_template('/index.html')
 
 
-@app.route('/start')
+@app.route('/start',methods = ['GET'])
 def starter():
     return render_template('/main.html')
+
+@app.route('/return',methods = ['GET'])
+def returner():
+    return render_template('/index.html')
 
 
 @app.route('/main', methods=['POST'])
@@ -40,19 +44,19 @@ def branch():
     count = int(counter.Get_count(answer,column,question))
 
     if (PathList[len(PathList)-1] is 1) and (counter.QuestionList[len(counter.QuestionList)-1] is counter.QuestionList[0]):
-        return render_template('/index')
+        return render_template('/index.html')
 
     elif count == 1:
-        return render_template('/result')
+        return render_template('/result.html')
 
     elif count == 0:
-        return render_template('/unknown')
+        return render_template('/unknown.html')
 
     elif count >= 2:
-        return render_template('/question')
+        return render_template('/question.html')
 
     else:
-        return render_template('/error')
+        return render_template('/error.html')
    
 if __name__ == "__main__":
     app.run(debug=True, port=5000, threaded=True)  
