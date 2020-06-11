@@ -16,7 +16,7 @@ import random
 
 
 
-users = "Postgres" 
+users = "Postgres"
 dbnames = "Abunator"
 passwords = "postgres"
 table = "maintable"

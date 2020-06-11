@@ -18,8 +18,7 @@ import psycopg2
 import random
 import counter
 
-  
-users = "Postgres" 
+users = "Postgres"
 dbnames = "Abunator"
 passwords = "postgres"
 
