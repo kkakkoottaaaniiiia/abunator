@@ -10,7 +10,7 @@ app = Flask(__name__)
 import counter
 import setters
 
-PathList = []
+PathList = [0]
 
 @app.route('/',methods = ['GET'] )
 def index():  
@@ -38,7 +38,7 @@ def branch():
     question = request.form.get('question')
     path = request.form.get('path')
     
-    #del PathList[0]
+    del PathList[0]
     PathList.append(path)
 
     count = int(counter.Get_count(answer,column,question))
