@@ -12,7 +12,7 @@ import Branch
 
 def setPathList():
     Branch.PathList.clear()
-    Branch.PathList = [0]
+    Branch.PathList.append(0)
 
 def setColumnList():
     counter.ColumnList.clear()

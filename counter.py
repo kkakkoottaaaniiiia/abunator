@@ -51,8 +51,8 @@ def SQLmaker():
 def Get_count(answer,column,question):
         Listmaker(answer,column, question)
         with get_connection() as con:
-            with con.cursor as cur :
-                cur.execute("select count (*) from animals where " + SQLmaker())
+            with con.cursor() as cur:
+                cur.execute("select count (*) from maintable where " + SQLmaker())
                 results = cur.fetchall()
         for i in results:
             Ararat = i[0]

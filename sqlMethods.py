@@ -25,6 +25,7 @@ passwords = "postgres"
 #データベースにアクセスするための情報(ローカルの場合)
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
+
 #DBに接続
 def get_connection():
     return psycopg2.connect(DATABASE_URL)

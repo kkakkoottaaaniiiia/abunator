@@ -22,7 +22,7 @@ def get_connection():
 def resNumber():
     with get_connection() as con:
             with con.cursor as cur :
-                cur.execute("select no from animals where " + counter.SQLmaker())
+                cur.execute("select no from maintable where " + counter.SQLmaker())
                 results = cur.fetchall()
     for i in results:
         Aramazd = i[0]
@@ -32,7 +32,7 @@ def resNumber():
 def resName(number):
     with get_connection() as con:
             with con.cursor as cur :
-                cur.execute("select name from animals where no = " + number)
+                cur.execute("select name from maintable where no = " + number)
                 results = cur.fetchall()
     for i in results:
         Anahit = i[0]
@@ -42,7 +42,7 @@ def resName(number):
 def resDealing(number):
     with get_connection() as con:
             with con.cursor as cur :
-                cur.execute("select dealing from animals where no = " + number)
+                cur.execute("select dealing from maintable where no = " + number)
                 results = cur.fetchall()
     for i in results:
         Vahagn = i[0]
