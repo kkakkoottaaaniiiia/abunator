@@ -7,8 +7,12 @@ Created on Tue Jun  9 11:22:08 2020
 from flask import Flask,render_template,request,session,redirect
 app = Flask(__name__)
 
+import sys
+sys.path.append("/Abunator/")
+
 import counter
 import setters
+import sqlMethods
 
 PathList = [0] 
 
@@ -23,16 +27,26 @@ def starter():
     setters.setColumnList()
     setters.setQuestionList()
     setters.setSQLList()
-    return render_template('/main.html')
+    return render_template('/main.html',\
+        question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
 
 @app.route('/return',methods = ['GET'])
-def returner():
+def initial():
     return render_template('/index.html')
+
+
+#@app.route('/main',methods = ['GET'])
+#def procedure():
+#    return render_template('/main.html',\
+#        question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
+    
+        
+def back():
+    pass
 
 
 @app.route('/main', methods=['POST'])
 def branch():
-
     answer = request.form.get('answer')
     column = request.form.get('column')
     question = request.form.get('question')
@@ -45,7 +59,10 @@ def branch():
 
     if (PathList[len(PathList)-1] is 1) and (counter.QuestionList[len(counter.QuestionList)-1] is counter.QuestionList[0]):
         return render_template('/index.html')
-
+    
+    elif count >= 2 and PathList[len(PathList)-1] is 1:
+        back()
+    
     elif count == 1:
         return render_template('/result.html')
 
@@ -53,7 +70,8 @@ def branch():
         return render_template('/unknown.html')
 
     elif count >= 2:
-        return render_template('/main.html')
+        return render_template('/main.html',\
+        question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
 
     else:
         return render_template('/error.html')

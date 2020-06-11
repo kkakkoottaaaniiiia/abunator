@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['templates\\main.html', 'app.py', 'Branch.py']
+recent_files = ['Branch.py', 'templates\\main.html', 'templates\\result.html', 'sqlMethods.py', 'counter.py']
 

@@ -16,9 +16,15 @@ Created on Tue Jun  9 11:20:15 2020
 import os
 import psycopg2
 import random
+
+import sys
+sys.path.append("/Abunator/")
+
 import counter
 
-users = "Postgres"
+baseList = ['no','name','division','size','color','region','place','time','pattern','poison','symptoms','food','sucker','epidemic','foreigner','season','individuality','dealing']
+
+users = "postgres"
 dbnames = "Abunator"
 passwords = "postgres"
 
@@ -48,7 +54,7 @@ def getMaxCalm(calm):
     with get_connection() as conn:
         with conn.cursor() as cur:
             #SQL文実行
-            cur.execute("SELECT "+calm+", count("+calm+") AS COUNT FROM maintable GROUP BY "+calm+" ORDER BY COUNT desc;")
+            cur.execute("SELECT "+ str(calm) +", count("+ str(calm) +") AS COUNT FROM maintable GROUP BY "+ str(calm) +" ORDER BY COUNT desc;")
             results = cur.fetchall()
     #この場合、情報は[(uuu, nnn), (ccc, hhh), ・・・, (iii, ooo)]の形でresultsに格納されている
     #今欲しいのはnnnの部分のため、for文でそこだけ取り出す
@@ -61,7 +67,7 @@ def getMaxCalm(calm):
 def questionVerse (calm):
     with get_connection() as conn:
         with conn.cursor() as cur:
-            cur.execute("SELECT "+calm+", count("+calm+") AS COUNT FROM maintable GROUP BY "+calm+" ORDER BY COUNT desc;")
+            cur.execute("SELECT "+ calm +", count("+ calm +") AS COUNT FROM maintable GROUP BY "+ calm +" ORDER BY COUNT desc;")
             results = cur.fetchall()
     for i in results:
         question=i[0]
@@ -76,13 +82,21 @@ def getCalm(list):
         with conn.cursor() as cur:
             cur.execute("SELECT * FROM maintable;")
             results = cur.fetchall()
-    for i in results:
-        if not(list in i[0]):
-            if(MAX<getMaxCalm(i[0])):
-                MAX=getMaxCalm(i[0])
-                buriburi=i[0]
+#    for i in results:
+#        if not(list in i[0]):
+#        if not(i[0] in list):
+#            if(MAX<getMaxCalm(i[0])):
+#                MAX=getMaxCalm(i[0])
+#                buriburi= i[0]
+
+    for i in range(0,len(baseList)-1):
+        if not(baseList[i] in list):
+            if(MAX<getMaxCalm(baseList[i])):
+                MAX=getMaxCalm(baseList[i])
+                buriburi= baseList[i]
 
     counter.ColumnList.append(buriburi)
     return buriburi
 
 #print(questionVerse("division"))
+

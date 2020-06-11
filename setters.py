@@ -4,6 +4,9 @@ Created on Wed Jun 10 09:50:58 2020
 
 @author: School
 """
+import sys
+sys.path.append("/Abunator/")
+
 import sqlMethods
 import counter
 import Branch
@@ -17,9 +20,15 @@ def setPathList():
 
 def setColumnList():
     counter.ColumnList.clear()
+    counter.ColumnList.append("no")
+    counter.ColumnList.append("name")
+    counter.ColumnList.append("dealing")
 
 def setQuestionList():
     counter.QuestionList.clear()
 
 def setSQLList():
     counter.SQLList.clear()
+    
+
+

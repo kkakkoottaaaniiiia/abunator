@@ -16,14 +16,17 @@
 
             <div id="TotleAnswer">
             <import sqlMethods>
+            <import counter>
                 <p class="dai" style="margin-left: 12px;">Question</p>
                 <div class="box">
                     <p>
 
                         <!--質問内容はここに記述する。{{変数}}の形で多分ok-->
-                <column = sqlMethods.getCalm()>
-                <question = sqlMethods.QuestionVerse(column)>
-                {{question}}
+                {% block question %}
+                <column = sqlMethods.getCalm(counter.ColumnList)>
+                <question = sqlMethods.questionVerse(column)>
+                <p>{{question}}</p>
+                {% endblock %}
 
                     </p>
 

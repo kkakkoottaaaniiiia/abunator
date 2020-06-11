@@ -8,6 +8,9 @@ Created on Tue Jun  9 11:20:26 2020
 
 # coding: utf-8
 
+import sys
+sys.path.append("/Abunator/")
+
 import os
 import flask
 import psycopg2
