@@ -15,12 +15,15 @@
             <hr size="2" color="#DB1D32" noshade/>
 
             <div id="TotleAnswer">
+            <import sqlMethods>
                 <p class="dai" style="margin-left: 12px;">Question</p>
                 <div class="box">
                     <p>
 
                         <!--質問内容はここに記述する。{{変数}}の形で多分ok-->
-
+                <column = sqlMethods.getCalm()>
+                <question = sqlMethods.QuestionVerse(column)>
+                {{question}}
 
                     </p>
 
