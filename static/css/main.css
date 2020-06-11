@@ -132,7 +132,7 @@ img{
 	font-weight:bold;
 	font-size:17px;
 	position: relative;
-	margin-left:12px;
+	margin-left:24px;
 	display: inline-block;
 	text-align: center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
@@ -153,18 +153,17 @@ img{
 	content:"";
 	width: 0;
 	height: 0;
-	content:"";
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 10px solid #555;
-	padding:10px;
+	border-color: #080808;
+	border-width: 10px;
+	border-style: solid;
+	border-radius: 10px;
 }
 
 /* 「RightToLeft」の動作内容 */
 @keyframes LeftToRight {
   0% {
     opacity: 0;/* 透明 */
-    transform: translateX(-15px);/* X軸方向に50px */
+    transform: translateX(-10px);/* X軸方向に50px */
   }
   100% {
     opacity: 1;/* 不透明 */
