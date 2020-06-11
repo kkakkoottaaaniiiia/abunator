@@ -18,13 +18,13 @@ import psycopg2
 import random
 import counter
 
-  
-users = "Postgres" 
+users = "Postgres"
 dbnames = "Abunator"
 passwords = "postgres"
 
 #データベースにアクセスするための情報(ローカルの場合)
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
+
 
 #DBに接続
 def get_connection():

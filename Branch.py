@@ -6,23 +6,23 @@ Created on Tue Jun  9 11:22:08 2020
 """
 from flask import Flask,render_template,request,session,redirect
 app = Flask(__name__)
-app.secret_key = b'random string...'
 
 import counter
+import setters
 
-PathList = []
-
-member_data = {}
-message_data = {}
-
+PathList = [0]
 
 @app.route('/',methods = ['GET'] )
-def index():
+def index():  
     return render_template('/index.html')
 
 
 @app.route('/start',methods = ['GET'])
 def starter():
+    setters.setPathList()
+    setters.setColumnList()
+    setters.setQuestionList()
+    setters.setSQLList()
     return render_template('/main.html')
 
 @app.route('/return',methods = ['GET'])
@@ -33,12 +33,12 @@ def returner():
 @app.route('/main', methods=['POST'])
 def branch():
 
-    answer = int(request.form.get('answer'))
-    column = str(request.form.get('column'))
-    question = str(request.form.get('question'))
-    path = int(request.form.get('path'))
+    answer = request.form.get('answer')
+    column = request.form.get('column')
+    question = request.form.get('question')
+    path = request.form.get('path')
     
-    del PathList[len(PathList)-1]
+    del PathList[0]
     PathList.append(path)
 
     count = int(counter.Get_count(answer,column,question))
@@ -53,7 +53,7 @@ def branch():
         return render_template('/unknown.html')
 
     elif count >= 2:
-        return render_template('/question.html')
+        return render_template('/main.html')
 
     else:
         return render_template('/error.html')
