@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <!-- headのコードを変える -->
+        <!-- <meta charset="UTF-8"> -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=maximum-scale"> -->
+        <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/index.css') }}"> -->    
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-31j">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css') }}">
+        
         <title>abunator</title>
     </head>
     
     <body>
         <div id="wrap">
+<<<<<<< HEAD
         
         <div id="main">
         <h1 class="f-big">ABUNATOR</h1>
@@ -42,11 +47,44 @@
                  <li></li>
              </ul>
         </div >
+=======
+            <div id="main">
+                <h1 class="f-big">ABUNATOR</h1>
+           
+                <!--<a href = "main.html" class="start">START</a>-->
+                <form method = 'POST' action = '/'>
+                    <input type = "hidden" name = "start" value = 1>
+                    <input type = "submit" value = "START" class = "button">
+                </form>
+>>>>>>> a6c2843e8354459c3835887c85a1d4122057ccf8
 
+                <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <!-- 画面の下に十分な余白を入れる改行 -->
+                    <br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br>
+                </ul>
+            </div >
         </div>
         
-        <!-- 初期化スペース -->
-       
+        <!-- 初期化スペース -->   
         
     </body>
 
