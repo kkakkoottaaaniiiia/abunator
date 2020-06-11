@@ -23,7 +23,7 @@ table = "maintable"
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 #ローカルのDBにつなぐときは↑
 
-culumnList = ["size","division","color","region","place","pattern","symptoms","food","decider01","decider02"]
+culumnList = ["size","division","color","region","place","time","season","poison","pattern","symptoms","food","sucker","epidemic","foreigner","individuality","dealing"]
 
 questionList = []
 
