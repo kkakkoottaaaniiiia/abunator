@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en">    
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=S, initial-scale=1.0">
@@ -15,12 +14,15 @@
             <hr size="2" color="#DB1D32" noshade/>
 
             <div id="TotleAnswer">
+                <import sqlMethods>
                 <p class="dai" style="margin-left: 12px;">Question</p>
                 <div class="box">
                     <p>
 
                         <!--質問内容はここに記述する。{{変数}}の形で多分ok-->
-
+                        <column = sqlMethods.getCalm()>
+                        <question = sqlMethods.QuestionVerse(column)>
+                        {{question}}
 
                     </p>
 
@@ -47,7 +49,8 @@
                                            <input type = "hidden" name = "pass" value = 0>
                                            <input type = "submit" value = "はい" class = "button">
                     </div>
-                </form>        
+                </form>
+                <br>        
                 
                 <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
                 <form method = "post" action = "/main">                
@@ -58,6 +61,7 @@
                                            <input type = "submit" value = "いいえ" class = "button">
                     </div>
                 </form>
+                <br>
         
                 <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
                 <form method = "post" action = "/main">                
@@ -68,6 +72,7 @@
                                            <input type = "submit" value = "わからない" class = "button">
                     </div>
                 </form>
+                <br>
         
                 <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
                 <form method = "post" action = "/main">                
@@ -83,8 +88,12 @@
                 <br>
                 <br>
         
+                </import>
             </div>
-            <div><img src="../imgs/character_program.png" /></div>
+            <div>
+                <img src="../static/imgs/character_program.png" alt="人工知能画像" title="人工知能の画像">
+            </div> 
+              
         </div>    
         
     </body>

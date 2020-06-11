@@ -26,6 +26,10 @@
             <% int resNo = Branch.getAnswerNo(answer, culumn, question); %>
             <% String name = Branch.resName(answer,culumn,question) ; %>
             <% String deal = Branch.getResultDealing01(answer,culumn,question) ; %>
+            
+            <resNo = result.resNumber()>
+            <name = result.resName(resNo)>
+            <dealing = result.resDealing(resNo)>
         -->
         <!-- 特に差支えのない限り、↑は動かさないでください（動物の情報を指定するコードです） -->
         
@@ -73,8 +77,7 @@
             
         </div>
         
-        <img class="smart" src="../imgs/smart.png" />
-
+        <img class="smart" src="../static/imgs/smart.png" alt="人工知能画像" title="人工知能の画像">
         <!-- <%--=res[3] --%> -->
         
         <!-- img src="img/smart.png" / -->
