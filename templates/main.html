@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en">    
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=S, initial-scale=1.0">
@@ -15,18 +14,15 @@
             <hr size="2" color="#DB1D32" noshade/>
 
             <div id="TotleAnswer">
-            <import sqlMethods>
-            <import counter>
+                <import sqlMethods>
                 <p class="dai" style="margin-left: 12px;">Question</p>
                 <div class="box">
                     <p>
 
                         <!--質問内容はここに記述する。{{変数}}の形で多分ok-->
-                {% block question %}
-                <column = sqlMethods.getCalm(counter.ColumnList)>
-                <question = sqlMethods.questionVerse(column)>
-                <p>{{question}}</p>
-                {% endblock %}
+                        <column = sqlMethods.getCalm()>
+                        <question = sqlMethods.QuestionVerse(column)>
+                        {{question}}
 
                     </p>
 
@@ -92,12 +88,12 @@
                 <br>
                 <br>
         
+                </import>
             </div>
-            <!-- <div><img src= "../imgs/character_program.png" alt="人工知能画像" /></div> -->
-            <!-- <div><img src= "https://github.com/kkakkoottaaaniiiia/abunator/blob/master/imgs/character_program.png" alt="人工知能画像" /></div> -->
-            <div><img src= "../imgs/character_program.jpg" alt="人工知能画像" /></div>
-
-            
+            <div>
+                <img src="../static/imgs/character_program.png" alt="人工知能画像" title="人工知能の画像">
+            </div> 
+              
         </div>    
         
     </body>
