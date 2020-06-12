@@ -20,10 +20,7 @@
                     <p>
 
                         <!--質問内容はここに記述する。{{変数}}の形で多分ok-->
-                        <!--<column = sqlMethods.getCalm()>
-                        <question = sqlMethods.QuestionVerse(column)>-->
-                        {{question}}
-                        
+                         {{question}}                       
 
                     </p>
 
@@ -44,8 +41,7 @@
             
                 <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
                 <form method = "post" action = "/main">
-                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
-                                           <input type = "hidden" name = "question" value = "{{question}}">-->
+                    <div class="triangle"> 
                                            <input type = "hidden" name = "answer" value = 0>
                                            <input type = "hidden" name = "path" value = 0>
                                            <input type = "submit" value = "はい" class = "button">
@@ -55,8 +51,7 @@
                 
                 <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
                 <form method = "post" action = "/main">                
-                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
-                                           <input type = "hidden" name = "question" value = "{{question}}"> -->
+                    <div class="triangle"> 
                                            <input type = "hidden" name = "answer" value = 1>
                                            <input type = "hidden" name = "path" value = 0>
                                            <input type = "submit" value = "いいえ" class = "button">
@@ -66,8 +61,7 @@
         
                 <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
                 <form method = "post" action = "/main">                
-                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
-                                           <input type = "hidden" name = "question" value = "{{question}}">--> 
+                    <div class="triangle"> 
                                            <input type = "hidden" name = "answer" value = 2>
                                            <input type = "hidden" name = "path" value = 0>
                                            <input type = "submit" value = "わからない" class = "button">
@@ -77,8 +71,7 @@
         
                 <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
                 <form method = "post" action = "/main">                
-                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
-                                           <input type = "hidden" name = "question" value = "{{question}}">--> 
+                    <div class="triangle"> 
                                            <input type = "hidden" name = "answer" value = 2>
                                            <input type = "hidden" name = "path" value = 1>
                                            <input type = "submit" value = "前の質問に戻る" class= "button">
