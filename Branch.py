@@ -40,7 +40,7 @@ def initial():
 
 #@app.route('/main',methods = ['GET'])
 #def procedure():
-#    return render_template('/main.html',\
+#    return render_template('/main.html',\count = count ,\
 #        question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
 
 
