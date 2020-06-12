@@ -14,20 +14,21 @@ import counter
 import setters
 import sqlMethods
 import Examine
+import result
 
 PathList = [0] 
 
 @app.route('/',methods = ['GET'] )
 def index(): 
-    setters.setPathList()
-    setters.setColumnList()
-    setters.setQuestionList()
-    setters.setSQLList()
     return render_template('/index.html')
 
 
 @app.route('/start',methods = ['GET'])
 def starter():
+    setters.setPathList()
+    setters.setColumnList()
+    setters.setQuestionList()
+    setters.setSQLList()
     return render_template('/main.html',\
         question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
 
@@ -68,7 +69,11 @@ def branch():
         question = 'それは' + counter.QuestionList[len(counter.QuestionList)-1] + '？')
             
     elif count == 1:
-        return render_template('/result.html')
+        number = result.resNumber()
+        return render_template('/result.html',\
+        number = result.resNumber(),\
+        name = result.resName(number),\
+        dealing = result.resDealing(number))
 
     elif count == 0 or len(counter.SQLList) >= 50:
         return render_template('/unknown.html')
