@@ -39,7 +39,7 @@ def getCulmn():
         culumn = culumnList[num]
         return culumn
     else:
-        culumn = "decider02"
+        culumn = "individuality"
         return culumn
 
 def getQuestion(culumn):
@@ -49,4 +49,4 @@ def getQuestion(culumn):
             result = cur.fetchall()
             question = result.getString(1)
 
-            return question
+            return 'それは'+ question + '？'

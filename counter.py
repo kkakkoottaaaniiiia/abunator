@@ -32,30 +32,31 @@ def get_connection():
     return psycopg2.connect(DATABASE_URL)
 
 #回答をリストに記録
-def Listmaker(answer,column,question):
-    if answer == 0 :
+def ListMaker(answer,column,question):
+    if answer is 0 :
         Mher = column + " = '" + question + "'"
         SQLList.append(Mher)
-    elif answer == 1 :
+    elif answer is 1 :
         Mher = column + " != '" + question + "'"
         SQLList.append(Mher)
-    elif answer == 2 :
+    elif answer is 2 :
         Mher = "no >= 1"
         SQLList.append(Mher)
 
 #過去の回答内容を取り出してSQL文にする
-def SQLmaker():
+def SQLMaker():
     Searchsql = "no >= 1"
     for i in range(0,len(SQLList)-1):
         Searchsql = Searchsql + " and " + SQLList[i]
     return  Searchsql
 
 #回答の内容に合致する動物の数を数える
-def Get_count(answer,column,question):
-        Listmaker(answer,column, question)
+#def GetCount(answer,column,question):
+#        ListMaker(answer,column, question)
+def GetCount():
         with get_connection() as con:
             with con.cursor() as cur:
-                cur.execute("select count (*) from maintable where " + SQLmaker())
+                cur.execute("select count (*) from maintable where " + SQLMaker())
                 results = cur.fetchall()
         for i in results:
             Ararat = i[0]

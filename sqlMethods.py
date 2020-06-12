@@ -98,5 +98,7 @@ def getCalm(list):
     counter.ColumnList.append(buriburi)
     return buriburi
 
+
+
 #print(questionVerse("division"))
 
