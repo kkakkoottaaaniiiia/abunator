@@ -20,7 +20,7 @@ SQLList = []
 ColumnList = []
 QuestionList = []
 
-users = "postgres" 
+users = "postgres"
 dbnames = "Abunator"
 passwords = "postgres"
 

@@ -29,6 +29,4 @@ def setQuestionList():
 
 def setSQLList():
     counter.SQLList.clear()
-    
-
 
