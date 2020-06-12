@@ -33,7 +33,7 @@ def setQuestion():
 def get_connection():
     return psycopg2.connect(DATABASE_URL)
 
-def getCulmn():
+def getCulumn():
     if (len(questionList) <= 35):
         num = random.randint(1,len(culumnList))
         culumn = culumnList[num]
