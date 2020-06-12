@@ -9,59 +9,19 @@
 </head>
 
 <body>
-
     <div id="wrap">
-
-        <!--
-            <% String answer = String.valueOf(request.getAttribute("answer")) ; %>
-            <% String culumn = String.valueOf(request.getAttribute("culumn")) ; %>
-            <% String question = String.valueOf(request.getAttribute("question")) ; %>
-            <%-- String[] res = Result.res(answer, culumn, question) ; --%>
-        -->
         
         <h1 class="f-big"><a href="/return">ABUNATOR</a></h1>
         <hr size="2" color="#DB1D32" noshade/>
-        
-        <!--
-            <% int resNo = Branch.getAnswerNo(answer, culumn, question); %>
-            <% String name = Branch.resName(answer,culumn,question) ; %>
-            <% String deal = Branch.getResultDealing01(answer,culumn,question) ; %>
-            
-            <resNo = result.resNumber()>
-            <name = result.resName(resNo)>
-            <dealing = result.resDealing(resNo)>
-        -->
-        <!-- 特に差支えのない限り、↑は動かさないでください（動物の情報を指定するコードです） -->
-        
-        <div class="box">
-        
-            <!--
-                <div >
-                <img src = "img/<%=resNo %>.png"  style="width: 350px;">
-            -->
-                <!-- ↑動物の画像 -->
-            <!--
-                <%--=res[2] --%>	<br>
-                </div>
-                <div class="box02">
-                <span class="name"><%=name %></span>
-            -->    
-                <!-- ↑動物の名前 -->	
-            <!--    
-                <br>
-                <P><%=deal %></P>
-            -->
-                <!-- ↑動物の説明文 -->
-            <!--
-                </div>
-            -->
-            
-            <!--ダミーデータ : resNo = 13 name = "ニホンザル" deal = "ニホンザル(No13)の説明文" -->
+        <div class="box01">
+            <a href= "/return" class="start">やり直す</a>
+        </div>
+        <div class="box">  
             <div>
                 <div>
                     <!-- <img src="../imgs/{{resNo}}.png" style="width: 350px;"> -->
                     <!--<img src="../imgs/13.png" style="width: 350px;">-->
-                    <img src="../static/imgs/{{number}}.png" style="width: 350px;">
+                    <img src="../static/imgs/{{number}}.png" style="width: 350px;" alt="name">
                     <br>
                 </div>
                 <div class="box02">
@@ -79,13 +39,8 @@
         </div>
         
         <img class="smart" src="../static/imgs/smart.png" alt="人工知能画像" title="人工知能の画像">
-        <!-- <%--=res[3] --%> -->
-        
-        <!-- img src="img/smart.png" / -->
-        
-        </div>
-        
 
+    </div>
 </body>
 
 </html>
