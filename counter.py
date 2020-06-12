@@ -46,7 +46,7 @@ def ListMaker(answer,column,question):
 #過去の回答内容を取り出してSQL文にする
 def SQLMaker():
     Searchsql = "no >= 1"
-    for i in range(0,len(SQLList)-1):
+    for i in range(0,len(SQLList)):
         Searchsql = Searchsql + " and " + SQLList[i]
     return  Searchsql
 
