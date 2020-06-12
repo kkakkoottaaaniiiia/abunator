@@ -1,6 +1,6 @@
 body {
 	margin: auto;
- }
+    }
 
 #wrap {
 	position: relative;
@@ -39,18 +39,18 @@ h1{
     /*font-color:#ffffff;*/
     color:#ffffff;
 	font-size:30px;
-  	display: inline-block;
-  	width: 150px;
-  	height: 100px;
-  	line-height: 100px;
-  	background: #DB1D32;
-  	text-align: center;
-  	text-decoration: none;
-  	border-bottom: solid 10px #a80d2a;/*ボタン色より暗めに*/
-  	border-right: solid 10px #C73E3A;/*ボタン色より暗めに*/
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    line-height: 100px;
+    background: #DB1D32;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: solid 10px #a80d2a;/*ボタン色より暗めに*/
+    border-right: solid 10px #C73E3A;/*ボタン色より暗めに*/
 }
 
- /*ボタンを押したとき*/
+/*ボタンを押したとき*/
 .start:active {
 	border:none;
 	-webkit-transform: translate(6px,6px);/*ボタンを動かすX軸とy軸*/
@@ -90,18 +90,18 @@ a {
 }
 
 @keyframes my-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
+    from {
+        opacity: 0;
+    }
+    to {
     opacity: 1;
-  }
+    }
 }
 
 #main {
   /* .boxが「my-fade-in」で状態変化するように指定 */
-  animation-name:     my-fade-in;
-  animation-duration: 3s;
+    animation-name:     my-fade-in;
+    animation-duration: 3s;
 }
 
 
