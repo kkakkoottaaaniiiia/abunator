@@ -71,11 +71,11 @@ def branch():
     elif count == 1:
         number = result.resNumber()
         return render_template('/result.html',\
-        number = result.resNumber(),\
+        number = number,\
         name = result.resName(number),\
         dealing = result.resDealing(number))
 
-    elif count == 0 or len(counter.SQLList) >= 50:
+    elif count == 0 or len(counter.ColumnList) >= 50:
         return render_template('/unknown.html')
 
     elif count >= 2 and len(counter.ColumnList) < 18:
