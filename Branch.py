@@ -85,10 +85,27 @@ def branch():
 
     elif count >= 2 and len(counter.ColumnList) >= 18:
         return render_template('/main.html',\
-        question = Examine.getQuestion(Examine.getCulumn()))
+        question = Examine.getQuestion(Examine.getCulmn()))
 
     else:
         return render_template('/error.html')
+
+
+#図鑑へのリンク
+@app.route('/picture_book',methods = ['GET'] )
+def zukan():
+    return render_template('/picture_book.html')
+
+#図鑑から解答への直通のリンク
+@app.route('/explanation', methods = ['POST'])
+def kaisetu():
+    number = request.form.get("no")
+    return render_template('/result.html',\
+        number = number,\
+        name = result.resName(number),\
+        dealing = result.resDealing(number))
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, threaded=True)
