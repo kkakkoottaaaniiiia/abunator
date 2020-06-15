@@ -45,10 +45,10 @@ def ListMaker(answer,column,question):
 
 #過去の回答内容を取り出してSQL文にする
 def SQLMaker():
-    Searchsql = "no >= 1"
+    David = "no >= 1"
     for i in range(0,len(SQLList)):
-        Searchsql = Searchsql + " and " + SQLList[i]
-    return  Searchsql
+        David = David + " and " + SQLList[i]
+    return  David
 
 #回答の内容に合致する動物の数を数える
 #def GetCount(answer,column,question):
