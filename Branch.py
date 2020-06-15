@@ -85,7 +85,7 @@ def branch():
             
     elif count >= 2 and len(counter.ColumnList) >= 18:
         return render_template('/main.html',\
-        question = Examine.getQuestion(Examine.getCulumn()))
+        question = Examine.getQuestion(Examine.getCulmn()))
             
     else:
         return render_template('/error.html')
@@ -93,9 +93,10 @@ def branch():
 
 #図鑑へのリンク
 @app.route('/picture_book',methods = ['GET'] )
-def picture_book(): 
-    no = pic_b.nolist()
+def zukan():
+    
     return render_template('/picture_book.html')
+    
 
    
 if __name__ == "__main__":
