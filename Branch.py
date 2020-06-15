@@ -93,10 +93,9 @@ def branch():
 
 #図鑑へのリンク
 @app.route('/picture_book',methods = ['GET'] )
-def pic_book(): 
-    no = pb.noList()
+def picture_book(): 
+    no = pic_b.nolist()
     return render_template('/picture_book.html')
-    no = no,\
 
    
 if __name__ == "__main__":
