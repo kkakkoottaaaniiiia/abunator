@@ -85,7 +85,7 @@ def branch():
 
     elif count >= 2 and len(counter.ColumnList) >= 18:
         return render_template('/main.html',\
-        question = Examine.getQuestion(Examine.getCulmn()))
+        question = Examine.getQuestion(Examine.getCulumn()))
 
     else:
         return render_template('/error.html')
