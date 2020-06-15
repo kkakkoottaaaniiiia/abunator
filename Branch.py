@@ -89,6 +89,13 @@ def branch():
             
     else:
         return render_template('/error.html')
+
+
+#図鑑へのリンク
+@app.route('/picture_book',methods = ['GET'] )
+def picture_book(): 
+    return render_template('/picture_book.html')
+
    
 if __name__ == "__main__":
     app.run(debug=True, port=5000, threaded=True)  
