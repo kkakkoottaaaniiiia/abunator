@@ -94,8 +94,16 @@ def branch():
 #図鑑へのリンク
 @app.route('/picture_book',methods = ['GET'] )
 def zukan():
-    
     return render_template('/picture_book.html')
+
+#図鑑から解答への直通のリンク
+@app.route('/explanation', methods = ['POST'])
+def kaisetu():
+    number = request.form.get("no")
+    return render_template('/result.html',\
+        number = number,\
+        name = result.resName(number),\
+        dealing = result.resDealing(number))
     
 
    
