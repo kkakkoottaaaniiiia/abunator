@@ -100,7 +100,7 @@ def zukan():
 @app.route('/explanation', methods = ['POST'])
 def kaisetu():
     number = request.form.get("no")
-    return render_template('/result.html',\
+    return render_template('/explanation.html',\
         number = number,\
         name = result.resName(number),\
         dealing = result.resDealing(number))
