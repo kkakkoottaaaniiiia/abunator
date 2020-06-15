@@ -9,5 +9,8 @@ Created on Fri Jun 12 13:41:52 2020
 import subprocess
 import sys
 import Branch
-
-subprocess.run(['\Abunator\Branch'])
+"""
+@api.route(/Abunator/)
+def starter():
+    subprocess.run(['\Abunator\Branch'])
+"""
