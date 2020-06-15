@@ -19,18 +19,14 @@ def get_connection():
     return psycopg2.connect(DATABASE_URL)
 
 #DBのimg_urlカラムを一つずつリストに入れる
-def imgUrlList():
-    #空のリストを作成
-    []
+def noList():
     with get_connection() as conn:
         with conn.cursor() as cur:
-            cur.execute("SELECT img_url FROM "+dbnames+" ;")
+            cur.execute("SELECT no FROM maintable ;")
             results = cur.fetchall()
-            print(results)
     #for文で一つずつリストにurlを入れる
     for i in results:
-        imgurl_list=i[0]
+        nolist = i[0]
         break
-
-    return imgurl_list
+    return int(nolist)
  
