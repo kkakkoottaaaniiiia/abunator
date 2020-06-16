@@ -15,6 +15,7 @@ import setters
 import sqlMethods
 import Examine
 import result
+import pic_book
 
 PathList = [0] 
 # 
@@ -99,11 +100,11 @@ def zukan():
 #図鑑から解答への直通のリンク
 @app.route('/explanation', methods = ['POST'])
 def kaisetu():
-    number = request.form.get("no")
+    no = request.form.get("no")
     return render_template('/explanation.html',\
-        number = number,\
-        name = result.resName(number),\
-        dealing = result.resDealing(number))
+        no = no,\
+        name = pic_book.resName(no),\
+        dealing = pic_book.resDealing(no))
     
 
    
