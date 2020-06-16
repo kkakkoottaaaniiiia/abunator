@@ -20,16 +20,25 @@ SQLList = []
 ColumnList = []
 QuestionList = []
 
+"""
+users = 'teamD@abunator'
+dbnames = 'Abunator'
+passwords = 'Nagato1109'
+
 users = "postgres" 
 dbnames = "Abunator"
 passwords = "postgres"
-
+"""
 #データベースにアクセスするための情報(ローカルの場合)
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
+
 
 #DBに接続
 def get_connection():
     return psycopg2.connect(DATABASE_URL)
+
+#サーバーのPostgresにつなぐときは↓
+#    return psycopg2.connect(host="abunator.postgres.database.azure.com",database="Abunator",user="teamD@abunator",port=5432, password="Nagato1109")
 
 #回答をリストに記録
 def ListMaker(answer,column,question):
