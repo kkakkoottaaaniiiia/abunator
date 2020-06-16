@@ -34,7 +34,6 @@ def starter():
     setters.setSQLList()
     return render_template('/main.html',\
         question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
-
 @app.route('/return',methods = ['GET'])
 def initial():
     return render_template('/index.html')
