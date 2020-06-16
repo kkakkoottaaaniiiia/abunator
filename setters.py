@@ -9,14 +9,14 @@ sys.path.append("/Abunator/")
 
 import sqlMethods
 import counter
-import Branch
+import app
 
 
 #ここにある関数を使えば、好きな配列を初期化できる
 
 def setPathList():
-    Branch.PathList.clear()
-    Branch.PathList.append(0)
+    app.PathList.clear()
+    app.PathList.append(0)
 
 def setColumnList():
     counter.ColumnList.clear()
