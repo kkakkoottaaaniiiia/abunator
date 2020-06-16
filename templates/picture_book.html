@@ -12,15 +12,26 @@
 
         <!-- <img src="../static/imgs/{{no}}.png" style="width: 150px;" alt="name"> -->
 
+        <!-- <form method = "post" action = "/picture_book"> -->
+
         <table>
             <tr>
                 <th></th>
-                <td><form method = "post" action = "/explanation">
-                    <input type="hidden" name = "no" value = "1">
-                    <a href="result.html"><img src="../static/imgs/1.png" style="width: 350px;"></a>
-                    <br>チャドクガ
-                </form></td>
-                <td><img src="../static/imgs/2.png" style="width: 350px;"><br>ヒトスジシマカ</td>
+                <td>
+                    <form method = "post" action = "/picture_book">
+                        <input type="hidden" name = "no" value = 1>
+                        <input type="image" src="../static/imgs/1.png" style="width: 350px;">
+                        <br>チャドクガ
+                    </form>
+                    
+                </td>
+                <td>
+                    <form method = "post" action = "/picture_book">
+                        <input type="hidden" name = "no" value = 2>
+                        <input type="image" src="../static/imgs/2.png" style="width: 350px;">
+                        <br>ヒトスジシマカ
+                    </form>
+                </td>
                 <td><img src="../static/imgs/3.png" style="width: 350px;"><br>アオバアリガタハネカクシ</td>
                 <td><img src="../static/imgs/4.png" style="width: 350px;"><br>オオスズメバチ</td>
                 <td><img src="../static/imgs/5.png" style="width: 350px;"><br>アカウシアブ</td>
@@ -63,8 +74,7 @@
                 <td><img src="../static/imgs/27.png" style="width: 350px;"><br>ヤマビル</td>
                 <td><img src="../static/imgs/28.png" style="width: 350px;"><br>ヤマトマダニ</td>
                 <td><img src="../static/imgs/29.png" style="width: 350px;"><br>アンドンクラゲ</td>
-                <td><img src="../static/imgs/30.png" style="width: 350px;"><br>カツオノエボシ</td>
-            </tr>
+                <td><img src="../static/imgs/30.png" style="width: 350px;"><br>カツオノエボシ</td>                </tr>
             <tr>
                 <th></th>
                 <td><img src="../static/imgs/31.png" style="width: 350px;"><br>ウンバチイソギンチャク</td>
@@ -83,6 +93,7 @@
             </tr>
         </table>
 
+        <!-- </form> -->
         <!-- 昇順、降順のソート 
         <a href="result.html"><img src="../imgs/13.png" alt="ニホンザル"></a>
 
