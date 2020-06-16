@@ -15,6 +15,7 @@ import setters
 import sqlMethods
 import Examine
 import result
+#図鑑用クラスのインポート
 import pic_book
 
 PathList = [0]
