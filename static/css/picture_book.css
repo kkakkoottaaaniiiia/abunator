@@ -31,18 +31,6 @@ hr {
 	opacity: 0.7;
 }
 
-/*生物の危険性をテキストの色で識別*/
-.danger {
-	color: red;
-}
-
-.warning {
-	color: orangered;
-}
-
-.caution {
-	color: yellow;
-}
 
 /*startに戻るボタン*/
 .start {
@@ -60,4 +48,20 @@ hr {
 .start:hover {
 	background: #FC876E;
 	color: white;
+}
+
+/*生物の危険性をテキストの色で分類*/
+danger {
+	padding: 20px;
+	color: red;
+}
+
+warning {
+	padding: 20px;
+	color: orangered;
+}
+
+caution {
+	padding: 20px;
+	color: yellow;
 }
