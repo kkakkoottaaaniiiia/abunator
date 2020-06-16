@@ -1,5 +1,6 @@
 #図鑑のDB pic_bookと連動する
 #result.pyのtableを変えた物を作る
+
 import sys
 sys.path.append("/Abunator/")
 import os
