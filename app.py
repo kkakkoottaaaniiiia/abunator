@@ -18,11 +18,11 @@ import result
 #図鑑用クラスのインポート
 import pic_book
 
-PathList = [0] 
-# 
+PathList = [0]
+#
 
 @app.route('/',methods = ['GET'] )
-def index(): 
+def index():
     return render_template('/index.html')
 
 
@@ -44,7 +44,7 @@ def initial():
 #def procedure():
 #    return render_template('/main.html',\count = count ,\
 #        question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
-    
+
 
 @app.route('/main', methods = ['POST'])
 def branch():
@@ -52,17 +52,17 @@ def branch():
     path = request.form.get("path")
     column = counter.ColumnList[len(counter.ColumnList)-1]
     question = counter.QuestionList[len(counter.QuestionList)-1]
-    
-    
+
+
     del PathList[len(PathList)-1]
     PathList.append(int(path))
-    
+
     counter.ListMaker(int(answer),column,question)
     count = counter.GetCount()
 
     if PathList[len(PathList)-1] is 1 and counter.QuestionList[len(counter.QuestionList)-1] is counter.QuestionList[0]:
         return render_template('/index.html')
-    
+
     elif PathList[len(PathList)-1] is 1:
         del counter.SQLList [len(counter.SQLList)-1]
         del counter.SQLList [len(counter.SQLList)-1]
@@ -70,7 +70,7 @@ def branch():
         del counter.QuestionList [len(counter.QuestionList)-1]
         return render_template('/main.html',\
         question = 'それは' + counter.QuestionList[len(counter.QuestionList)-1] + '？')
-            
+
     elif count == 1:
         number = result.resNumber()
         return render_template('/result.html',\
@@ -84,11 +84,11 @@ def branch():
     elif count >= 2 and len(counter.ColumnList) < 18:
         return render_template('/main.html',\
         question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
-            
+
     elif count >= 2 and len(counter.ColumnList) >= 18:
         return render_template('/main.html',\
-        question = Examine.getQuestion(Examine.getCulmn()))
-            
+        question = Examine.getQuestion(Examine.getCulumn()))
+
     else:
         return render_template('/error.html')
 
@@ -109,8 +109,10 @@ def kaisetu():
     no = no,\
     name = pic_book.resName(no),\
     dealing = pic_book.resDealing(no))
-    
 
-   
+
+
+
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, threaded=True)  
+    app.run(debug=True, port=5000, threaded=True)

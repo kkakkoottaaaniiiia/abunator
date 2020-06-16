@@ -24,11 +24,11 @@ QuestionList = []
 users = 'teamD@abunator'
 dbnames = 'Abunator'
 passwords = 'Nagato1109'
-
+"""
 users = "postgres" 
 dbnames = "Abunator"
 passwords = "postgres"
-"""
+
 #データベースにアクセスするための情報(ローカルの場合)
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
