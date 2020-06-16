@@ -30,6 +30,6 @@ def setQuestionList():
 def setSQLList():
     counter.SQLList.clear()
     counter.SQLList.append("no >= 1")
-    
+
 
 

@@ -1,7 +1,7 @@
 body {
 	margin: auto;
 	background: linear-gradient(#FC876E, #FCF26E ) fixed;
- }
+    }
 
 #wrap {
 	position: relative;
@@ -161,14 +161,14 @@ img{
 
 /* 「RightToLeft」の動作内容 */
 @keyframes LeftToRight {
-  0% {
+	0% {
     opacity: 0;/* 透明 */
     transform: translateX(-10px);/* X軸方向に50px */
-  }
-  100% {
+	}
+	100% {
     opacity: 1;/* 不透明 */
     transform: translateX(0);
-  }
+	}
 }
 
 /* 「RightToLeft」を適用する箇所 */

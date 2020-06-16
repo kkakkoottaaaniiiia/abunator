@@ -11,7 +11,7 @@ import counter
 import psycopg2
 import flask
 
-users = "postgres" 
+users = "postgres"
 dbnames = "Abunator"
 passwords = "postgres"
 
@@ -20,7 +20,7 @@ DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
 def get_connection():
     return psycopg2.connect(DATABASE_URL)
-    
+
 def resNumber():
     with get_connection() as con:
             with con.cursor() as cur:
