@@ -6,7 +6,7 @@ body {
 #wrap {
 	position: relative;
 	height:100%;
-	max-width: 80%;
+	width: 80%;
 	background-color: #ffffff;
 	margin: 0 auto;
 }
