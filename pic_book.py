@@ -18,7 +18,15 @@ DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 def get_connection():
     return psycopg2.connect(DATABASE_URL)
     
-#noは画像クリックの際にpostでもらう
+def resNumber(no):
+    with get_connection() as con:
+            with con.cursor() as cur:
+                cur.execute("select no from pic_book where no = " + str(no))
+                results = cur.fetchall()
+    for i in results:
+        num = i[0]
+        break
+    return int(num)
 
 def resName(no):
     with get_connection() as con:
