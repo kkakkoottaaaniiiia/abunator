@@ -50,18 +50,20 @@ hr {
 	color: white;
 }
 
-/*生物の危険性をテキストの色で分類*/
-danger {
-	padding: 20px;
+/*生物の危険性を名前の色で分類したい*/
+
+p{
+	font-size:15px;
+}
+
+#danger{
 	color: red;
 }
 
-warning {
-	padding: 20px;
+#warning{
 	color: orangered;
 }
 
-caution {
-	padding: 20px;
+#caution{
 	color: yellow;
 }

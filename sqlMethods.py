@@ -24,11 +24,11 @@ import counter
 
 baseList = ['no','name','division','size','color','region','place','time','pattern','poison','symptoms','food','sucker','epidemic','foreigner','season','individuality','dealing']
 
-"""
+
 users = "postgres"
 dbnames = "Abunator"
 passwords = "postgres"
-"""
+
 
 #データベースにアクセスするための情報(ローカルの場合)
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
@@ -40,7 +40,7 @@ def get_connection():
     return psycopg2.connect(DATABASE_URL)
 
 #サーバーのpostresにつなぐときは↓
-#   return psycopg2.connect(host="abunator.postgres.database.azure.com",database="Abunator",user="teamD@abunator",port=5432, password="Nagato1109")
+    #return psycopg2.connect(host="abunator.postgres.database.azure.com",database="Abunator",user="teamD@abunator",port=5432, password="Nagato1109")
 
 
 #DBのnameカラムからランダムに選択
