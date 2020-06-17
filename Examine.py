@@ -31,7 +31,10 @@ def setQuestion():
     questionList.clear
 
 def get_connection():
-    return psycopg2.connect(DATABASE_URL)
+#    return psycopg2.connect(DATABASE_URL)
+
+    return psycopg2.connect(host="abunator.postgres.database.azure.com",database="Abunator",user="teamD@abunator",port=5432, password="Nagato1109")
+
 
 def getCulumn():
     if (len(questionList) <= 35):

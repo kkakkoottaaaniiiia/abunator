@@ -16,7 +16,10 @@ passwords = "postgres"
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
 def get_connection():
-    return psycopg2.connect(DATABASE_URL)
+#    return psycopg2.connect(DATABASE_URL)
+
+    return psycopg2.connect(host="abunator.postgres.database.azure.com",database="Abunator",user="teamD@abunator",port=5432, password="Nagato1109")
+
 
 def resNumber(no):
     with get_connection() as con:
