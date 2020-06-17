@@ -16,10 +16,7 @@ passwords = "postgres"
 DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
 def get_connection():
-#    return psycopg2.connect(DATABASE_URL)
-
-    return psycopg2.connect(host="abunator.postgres.database.azure.com",database="Abunator",user="teamD@abunator",port=5432, password="Nagato1109")
-
+    return psycopg2.connect(DATABASE_URL)
 
 def resNumber(no):
     with get_connection() as con:
@@ -50,3 +47,14 @@ def resDealing(no):
         explanation = i[0]
         break
     return str(explanation)
+
+def resRank(no):
+    with get_connection() as con:
+            with con.cursor() as cur:
+                cur.execute("select danger from pic_book where no = " + str(no))
+                results = cur.fetchall()
+    for i in results:
+        rank = i[0]
+        break
+    return str(rank)
+    

@@ -31,18 +31,6 @@ hr {
 	opacity: 0.7;
 }
 
-/*生物の危険性をテキストの色で識別*/
-.danger {
-	color: red;
-}
-
-.warning {
-	color: orangered;
-}
-
-.caution {
-	color: yellow;
-}
 
 /*startに戻るボタン*/
 .start {
@@ -61,3 +49,4 @@ hr {
 	background: #FC876E;
 	color: white;
 }
+

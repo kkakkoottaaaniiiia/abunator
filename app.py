@@ -34,6 +34,7 @@ def starter():
     setters.setSQLList()
     return render_template('/main.html',\
         question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
+
 @app.route('/return',methods = ['GET'])
 def initial():
     return render_template('/index.html')
@@ -107,7 +108,9 @@ def kaisetu():
     return render_template('/explanation.html',\
     no = no,\
     name = pic_book.resName(no),\
-    dealing = pic_book.resDealing(no))
+    dealing = pic_book.resDealing(no),\
+    rank = pic_book.resRank(no))
+ 
 
 
 
