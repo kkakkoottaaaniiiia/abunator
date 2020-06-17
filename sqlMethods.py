@@ -24,16 +24,13 @@ import counter
 
 baseList = ['no','name','division','size','color','region','place','time','pattern','poison','symptoms','food','sucker','epidemic','foreigner','season','individuality','dealing']
 
-
 users = "postgres"
 dbnames = "Abunator"
 passwords = "postgres"
 
-
 #データベースにアクセスするための情報(ローカルの場合)
 #DATABASE_URL= " user=" + users +" dbname=" + dbnames +" password=" + passwords
 
-#DATABASE_URL = "host=abunator.postgres.database.azure.com,database=Abunator,user=teamD@abunator,port=5432,password=Nagato1109"
 
 #DBに接続
 def get_connection():
@@ -108,3 +105,4 @@ def getCalm(list):
 
 
 #print(questionVerse("division"))
+
