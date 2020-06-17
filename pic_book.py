@@ -47,3 +47,14 @@ def resDealing(no):
         explanation = i[0]
         break
     return str(explanation)
+
+def resRank(no):
+    with get_connection() as con:
+            with con.cursor() as cur:
+                cur.execute("select danger from pic_book where no = " + str(no))
+                results = cur.fetchall()
+    for i in results:
+        rank = i[0]
+        break
+    return str(rank)
+    

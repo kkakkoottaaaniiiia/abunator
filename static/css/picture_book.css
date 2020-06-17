@@ -50,20 +50,3 @@ hr {
 	color: white;
 }
 
-/*生物の危険性を名前の色で分類したい*/
-
-p{
-	font-size:15px;
-}
-
-#danger{
-	color: red;
-}
-
-#warning{
-	color: orangered;
-}
-
-#caution{
-	color: yellow;
-}

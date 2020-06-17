@@ -108,7 +108,9 @@ def kaisetu():
     return render_template('/explanation.html',\
     no = no,\
     name = pic_book.resName(no),\
-    dealing = pic_book.resDealing(no))
+    dealing = pic_book.resDealing(no),\
+    rank = pic_book.resRank(no))
+ 
 
 
 
