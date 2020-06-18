@@ -5,12 +5,20 @@ Created on Fri Jun 12 13:41:52 2020
 @author: School
 """
 
-
+"""
 import subprocess
 import sys
-import Branch
-"""
+import app
+import flask_restful
+
+api = Flask(__name__)
+
+
 @api.route(/Abunator/)
 def starter():
-    subprocess.run(['\Abunator\Branch'])
+    app.starter()
+
+@api.route(/pic_book/)
+def pic_book():
+    app.zukan()
 """
