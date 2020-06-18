@@ -56,5 +56,4 @@ def resRank(no):
     for i in results:
         rank = i[0]
         break
-    return str(rank)
-    
+    return str(rank)   

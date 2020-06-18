@@ -32,6 +32,19 @@ h1{
 	color:#DB1D32;
 }
 
+/*図鑑へのリンク*/
+.picture_book{
+    color:#ffffff;
+	font-size:20px;
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    line-height: 100px;
+    background: #a80d2a;
+    text-align: center;
+    text-decoration: none;
+}
+
 /*スタートボタンを立体に*/
 .start {
     font-weight:bold;
@@ -80,6 +93,8 @@ a {
 	-webkit-animation: scale .3s ease-in-out;
 	animation: scale .3s ease-in-out;
 }
+
+
 
 /*アニメーションの指定*/
 @-webkit-keyframes scale {
@@ -279,9 +294,4 @@ a {
         border-radius: 50%;
     }
 
-}
-
-.picture_book{
-    color: #000;
-    font-size: 20px;
 }
