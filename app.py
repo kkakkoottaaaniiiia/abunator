@@ -20,6 +20,8 @@ import pic_book
 
 PathList = [0]
 #
+#解答履歴を入れる変数を宣言
+name = ''
 
 @app.route('/',methods = ['GET'] )
 def index():
@@ -37,7 +39,12 @@ def starter():
 
 @app.route('/return',methods = ['GET'])
 def initial():
-    return render_template('/index.html')
+    #return render_template('/index.html')
+
+    #前回の検索結果をスタート画面に表示したい グローバル変数で
+    return render_template('index.html',\
+    name = name)
+
 
 
 #@app.route('/main',methods = ['GET'])
@@ -73,6 +80,11 @@ def branch():
 
     elif count == 1:
         number = result.resNumber()
+
+        #追加　グローバル変数で上書き
+        global name
+        name = result.resName(number)
+
         return render_template('/result.html',\
         number = number,\
         name = result.resName(number),\
@@ -110,8 +122,6 @@ def kaisetu():
     name = pic_book.resName(no),\
     dealing = pic_book.resDealing(no),\
     rank = pic_book.resRank(no))
- 
-
 
 
 if __name__ == "__main__":
