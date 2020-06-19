@@ -25,7 +25,12 @@ name = ''
 
 @app.route('/',methods = ['GET'] )
 def index():
-    return render_template('/index.html')
+    if name != '':
+        return render_template('index.html',\
+        name = name)
+    else:
+        return render_template('index.html',\
+        name = '前回の検索結果はありません')
 
 
 @app.route('/start',methods = ['GET'])
@@ -42,8 +47,12 @@ def initial():
     #return render_template('/index.html')
 
     #前回の検索結果をスタート画面に表示したい グローバル変数で
-    return render_template('index.html',\
-    name = name)
+    if name != '':
+        return render_template('index.html',\
+        name = name)
+    else:
+        return render_template('index.html',\
+        name = '前回の検索結果はありません')
 
 
 
@@ -87,7 +96,7 @@ def branch():
 
         return render_template('/result.html',\
         number = number,\
-        name = result.resName(number),\
+        name = name,\
         dealing = result.resDealing(number))
 
     elif count == 0 or len(counter.ColumnList) >= 50:
