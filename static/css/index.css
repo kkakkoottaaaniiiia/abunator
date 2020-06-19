@@ -32,6 +32,13 @@ h1{
 	color:#DB1D32;
 }
 
+/*前回の結果の表示*/
+.lastresult{
+    color:#000000;
+    text-align:center;
+    font-weight:bold;
+}
+
 /*図鑑へのリンク*/
 .picture_book{
     color:#ffffff;
