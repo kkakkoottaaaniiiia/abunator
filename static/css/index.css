@@ -8,7 +8,7 @@ body {
     height:100%;
     background-size: cover;
     text-align:center;
-    background: radial-gradient(closest-side, #e7ff0e, #ffffff, #da3316);
+    background: radial-gradient(closest-side, #FC876E, #FCF26E, #FC876E);
 }
 /*タイトル*/
 h1{
