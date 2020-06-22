@@ -1,34 +1,35 @@
 body {
     margin: 0;
     padding: 0;
-}
+    background: #FC876E;
+    }
 
 #wrap {
-    position: relative;
-    height:100%;
+	position: relative;
+	height:100%;
     background-size: cover;
-    text-align:center;
+	text-align:center;
     background: radial-gradient(closest-side, #FC876E, #FCF26E, #FC876E);
 }
 /*タイトル*/
 h1{
-    color:  #414444;
-    padding:-100px;
-    font-size:80px;
+	color:  #414444;
+	padding:-100px;
+	font-size:80px;
 }
 
 /*タイトルのネオン設定*/
 .f-big {
-    text-shadow: 0px 0px 80px #ffffff ,/*横方向のずれ、下方向のずれ、ぼかし具合*/
-    0px 0px 20px #ffffff,
-    0px 0px 40px #ffffff,
-    0px 0px 60px #ffffff,
-    0px 0px 80px #ffffff;
+	text-shadow: 0px 0px 80px #ffffff ,/*横方向のずれ、下方向のずれ、ぼかし具合*/
+	0px 0px 20px #ffffff,
+	0px 0px 40px #ffffff,
+	0px 0px 60px #ffffff,
+	0px 0px 80px #ffffff;
 }
 
 /*タイトルの最初の文字を赤色指定*/
 .f-big:first-letter{
-    color:#DB1D32;
+	color:#DB1D32;
 }
 
 /*前回の結果の表示*/
@@ -39,7 +40,7 @@ h1{
 }
 
 /*図鑑へのリンク*/
-.picture_book{
+/*.picture_book{
     color:#ffffff;
 	font-size:20px;
     display: inline-block;
@@ -50,12 +51,80 @@ h1{
     text-align: center;
     text-decoration: none;
 }
+*/
+/*図鑑のボタン*/
+.picture_book {
+    display: inline-block;
+    width: 180px;
+    height:50px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 52px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 0;
+    color: #FFF;
+    background-color: #ff0000;
+    border: 2px solid #ffa600;
+    border-top: 4px solid #ec4848;
+    border-right: 4px solid #5f0a0a;
+    border-bottom: 4px solid #740f0f;
+    border-left: 4px solid #f98c8c;
+    border-radius: 0;
+    background: #fbff00;
+}
+
+.picture_book span {
+    position: relative;
+    z-index: 1;
+}
+
+.picture_book::before,
+.picture_book::after {
+    content: "";
+    display: block;
+    background-color: #DB1D32;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: .2s;
+}
+.picture_book::before {
+    left: 0;
+}
+.picture_book::after {
+    right: 0;
+}
+
+.picture_book:hover:before,
+.picture_book:hover:after {
+    width: 0;
+    background-color: #eb820b;
+}
+
+.picture_book:hover {
+    color: #000000;
+    border-top: 4px solid #740f0f;
+    border-right: 4px solid #f98c8c;
+    border-bottom: 4px solid #ec4848;
+    border-left: 4px solid #5f0a0a;
+}
+
+a {
+	text-decoration: none ;
+	color:white;
+}
+
 /*スタートボタンを立体に*/
-.start {
+/*.start {
     font-weight:bold;
     /*color指定のコードを変更_下記のコメントアウトが元の記述*/
     /*font-color:#ffffff;*/
-    color:#ffffff;
+/*    color:#ffffff;
 	font-size:30px;
     display: inline-block;
     width: 150px;
@@ -65,14 +134,60 @@ h1{
     text-align: center;
     text-decoration: none;
     border-bottom: solid 10px #a80d2a;/*ボタン色より暗めに*/
-    border-right: solid 10px #C73E3A;/*ボタン色より暗めに*/
-}
+/*    border-right: solid 10px #C73E3A;/*ボタン色より暗めに*/
+/*}
+*/
+/*スタートボタン*/
+.start {
+    display: inline-block;
+    width: 180px;
+    height:50px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 52px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #FFF;
+    background-color: #DB1D32;
+    border: 2px solid #DB1D32;
+    border-top: 4px solid #ec4848;
+    border-right: 4px solid #5f0a0a;
+    border-bottom: 4px solid #740f0f;
+    border-left: 4px solid #f98c8c;
+    border-radius: 0;
+    background: #DB1D32;
 
-/*ボタンを押したとき*/
-.start:active {
-	border:none;
-	-webkit-transform: translate(6px,6px);/*ボタンを動かすX軸とy軸*/
-	transform: translate(6px,6px);
+}
+.start:after{
+    width: 100%;
+    height: 0;
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background : #FFF;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transition: .2s;
+    z-index: -1;
+}
+.start:hover{
+    color: #DB1D32;
+    border-top: 4px solid #740f0f;
+    border-right: 4px solid #f98c8c;
+    border-bottom: 4px solid #ec4848;
+    border-left: 4px solid #5f0a0a;
+}
+.start:hover:after{
+    height: 240%;
+    opacity: 1;
+}
+.start:active:after{
+    height: 340%;
+    opacity: 1;
 }
 
 /*@keyframes rippleEffect {
