@@ -4,6 +4,9 @@ import os
 import flask
 import psycopg2
 import random
+import counter
+import sys
+sys.path.append("/abunator")
 
 #host = "18.181.156.243"
 #port = "5432"
@@ -34,7 +37,7 @@ def get_connection():
     return psycopg2.connect(DATABASE_URL)
 
 def getCulumn():
-    if (len(questionList) <= 35):
+    if (len(counter.QuestionList) <= 35):
         num = random.randint(1,len(culumnList))
         culumn = culumnList[num]
         return culumn
