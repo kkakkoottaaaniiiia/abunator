@@ -155,7 +155,7 @@ def referrence(name):
         dealing = dealing,\
         rank = rank)
     else:
-        return render_template('/index.html/',\
+        return render_template('/index.html',\
         name = '前回の検索結果はありません' )
 
 
