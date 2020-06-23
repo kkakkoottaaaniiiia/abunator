@@ -20,7 +20,10 @@ start.click()
 
 #質問画面はテストが短くて済むアライグマにしている
 time.sleep(5)
-no = driver.find_element_by_class_name("button")
+no = driver.find_element_by_name('いいえ')
+no.click()
+time.sleep(5)
+no = driver.find_element_by_name('はい')
 no.click()
 
 #10秒待機
