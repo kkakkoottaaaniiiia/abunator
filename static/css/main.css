@@ -1,14 +1,34 @@
+html{
+	height: 100%;
+	min-height: 100%;
+}
 body {
-	margin: auto;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	min-height: 100%;
 	background: linear-gradient(#FC876E, #FCF26E ) ;
-    }
+	background-repeat: no-repeat;
+	}
+
+body:after{
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	content: "";
+}
 
 #wrap {
 	position: relative;
 	height:100%;
+	min-height: 100%;
 	max-width: 80%;
 	background-color: #ffffff;
 	margin: 0 auto;
+}
+
+body > #wrap{
+	height:auto;
 }
 
 h1{
@@ -34,7 +54,6 @@ hr {
 
 a{
 	text-decoration: none ;
-	color:black;
 }
 
 .dai{

@@ -107,8 +107,17 @@ def branch():
         question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
 
     elif count >= 2 and len(counter.ColumnList) >= 18:
-        return render_template('/main.html',\
-        question = Examine.getQuestion(Examine.getCulumn()))
+        column = Examine.getCulumn()
+        question = Examine.getQuestion(column)
+        if not question in counter.QuestionList:
+            return render_template('/main.html',\
+            question = question)
+        else:
+            while question in counter.QuestionList:
+                column = Examine.getCulumn()
+                question = Examine.getQuestion(column)  
+            return render_template('/main.html',\
+            question = question)            
 
     else:
         return render_template('/error.html')
@@ -131,6 +140,23 @@ def kaisetu():
     name = pic_book.resName(no),\
     dealing = pic_book.resDealing(no),\
     rank = pic_book.resRank(no))
+
+#「前回の検索結果」で表示された動物について詳しく見られる機能
+@app.route('/refer/<name>', methods = ['GET'])
+def referrence(name):
+    if name != '前回の検索結果はありません':
+        name = name 
+        no = pic_book.resNo(name)
+        dealing = pic_book.resDealing(no)
+        rank = pic_book.resRank(no)
+        return render_template('/explanation.html',\
+        no = no,\
+        name = name,\
+        dealing = dealing,\
+        rank = rank)
+    else:
+        return render_template('/index.html',\
+        name = '前回の検索結果はありません' )
 
 
 if __name__ == "__main__":
