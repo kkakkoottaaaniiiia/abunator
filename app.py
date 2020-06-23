@@ -141,7 +141,7 @@ def kaisetu():
     dealing = pic_book.resDealing(no),\
     rank = pic_book.resRank(no))
 
-#前回の検索結果の動物について詳しくみられる機能
+#「前回の検索結果」で表示された動物について詳しく見られる機能
 @app.route('/refer/<name>', methods = ['GET'])
 def referrence(name):
     if name != '前回の検索結果はありません':
@@ -155,7 +155,7 @@ def referrence(name):
         dealing = dealing,\
         rank = rank)
     else:
-        return render_template('/index.html/',\
+        return render_template('/index.html',\
         name = '前回の検索結果はありません' )
 
 
